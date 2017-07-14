@@ -58,14 +58,13 @@ function validateItemsEven() {
                 output1.push(i);
             }
         }
-        return output1;    
+        document.getElementById("output1").innerText = output1.join();
     }
     document.getElementById("even").style.display = "block";
     document.getElementById("start").innerText = Number(num1);
     document.getElementById("end").innerText = Number(num2);
     document.getElementById("step").innerText = Number(num3);
     document.getElementById("output1").style.display = "block";
-    document.getElementById("output1").innerText = output1;
 }
 /*
 function validateItemsOdd() {

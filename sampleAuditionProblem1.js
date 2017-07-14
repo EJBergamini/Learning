@@ -29,7 +29,6 @@ function validateItemsEven() {
         alert("Starting Number must be filled-in with a number.");
         return false;
     }
-    clearErrors();
     if (num2 == "" || isNaN(num2)) {
        alert("Ending Number must be filled-in with a number.");
        document.forms["userForm"]["endingNumber"]
@@ -37,7 +36,6 @@ function validateItemsEven() {
        document.forms["userForm"]["endingNumber"].focus();
        return false;
     }
-    clearErrors();
     if (num3 == "" || isNaN(num3)) {
        alert("Step Number must be filled-in with a number.");
        document.forms["userForm"]["stepNumber"]
@@ -45,33 +43,31 @@ function validateItemsEven() {
        document.forms["userForm"]["stepNumber"].focus();
        return false;
     }
-    clearErrors();
     if (num3 <= 0) {
         alert("Step number must be greater than zero.")
         return false;
     }
-    clearErrors();
     if (num2 <= num1) {
         alert("Ending Number must be greater than Starting Number.")
         return false;
     }
     else function evenNumbers(num1, num2, num3){    
         var output1 = [];    
-        for (var i= num1; i < num2; i += num3){    
+        for (var i = num1; i < num2; i += num3){    
             if (i % 2 == 0){       
                 output1.push(i);
-                return output1;     
-            }     
+            }
         }
+        document.getElementById("output1").innerText = output1;  
     }
     document.getElementById("even").style.display = "block";
-    document.getElementById("start").innerText = num1;
-    document.getElementById("end").innerText = num2;
-    document.getElementById("step").innerText = num3;
-    document.getElementById("output1").innerText = evenNumbers(output1);
-    return false;
+    document.getElementById("start").innerText = Number(num1);
+    document.getElementById("end").innerText = Number(num2);
+    document.getElementById("step").innerText = Number(num3);
+    document.getElementById("output1").style.display = "block";
+    return output1
 }
-
+/*
 function validateItemsOdd() {
     clearErrors();
     var num1 = document.forms["userForm"]["startingNumber"].value;
@@ -81,7 +77,6 @@ function validateItemsOdd() {
         alert("Starting Number must be filled in with a number.");
         return false;
     }
-    clearErrors();
     if (num2 == "" || isNaN(num2)) {
        alert("Ending Number must be filled in with a number.");
        document.forms["userForm"]["endingNumber"]
@@ -89,7 +84,6 @@ function validateItemsOdd() {
        document.forms["userForm"]["endingNumber"].focus();
        return false;
     }
-    clearErrors();
     if (num3 == "" || isNaN(num3)) {
        alert("Step Number must be filled in with a number.");
        document.forms["userForm"]["stepNumber"]
@@ -97,12 +91,10 @@ function validateItemsOdd() {
        document.forms["userForm"]["stepNumber"].focus();
        return false;
     }
-    clearErrors();
     if (num3 <= 0) {
         alert("Step number must be greater than or equal to zero.")
         return false;
     }
-    clearErrors();
     if (num2 <= num1) {
         alert("Ending Number must be greater than Starting Number.")
         return false;
@@ -117,8 +109,8 @@ function validateItemsOdd() {
         }
     }
     document.getElementById("odd").style.display = "block";
-    document.getElementById("start").innerText = num1;
-    document.getElementById("end").innerText = num2;
-    document.getElementById("step").innerText = num3;
+    document.getElementsByClassName("startingNumber").innerText = num1;
+    document.getElementsByClassName("endingNumber").innerText = num2;
+    document.getElementsByClassName("stepNumber").innerText = num3;
     document.getElementById("output2").innerText = oddNumbers(output2);
-}
+} */
