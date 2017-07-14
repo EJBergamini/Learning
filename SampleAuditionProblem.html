@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--I thought it might be fun to add also ODD numbers as well as an output and try to combine those outputs in a single space within the page.-->
+
+<!--There is a problem with validating where once you validate if you are incorrect the JS validation will break the BS grid 
+system and highlight the offending form field, I don't know how to prevent that from happening exactly.-->
+
+    <head>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+
+        <!-- Optional theme -->
+        <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+        </script>
+        <script type="text/JavaScript" src="sampleAuditionProblem.js">
+        </script>
+        
+        <title>Sample Audition Problem
+        </title>
+        
+        <style>
+            header {
+                text-align: center;
+            }
+            #startingNumber {
+                width: 250px;
+            }
+             #endingNumber {
+                width: 250px;
+            }
+             #stepNumber {
+                width: 250px;
+            }
+            #label {
+                width: 250px;
+                text-align: right;
+            }
+            #buttons {
+                width: 250px;
+                margin: 0 auto;
+                padding: 0;
+            }
+            #buttonsSpace {
+                width: 250px;
+            }
+            button {
+                width: 120px;
+            }
+        </style>
+    </head>
+    <header>
+        <h1>Sample Audition Problem</h1>
+    </header>
+    <body>
+    <br>
+    <br>
+        <div class="container-fluid">
+            <form class="form" id="formContents" name="userForm">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" id="label" for="startingNumber">Starting Number:
+                    </label>
+                    <input class="col-sm-2 form-control" class="startingNumber" id="startingNumber" type="number" placeholder="Enter any positive integer.">
+                    </input>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" id="label" for="endingNumber">Ending Number:
+                    </label>
+                    <input class="col-sm-2 form-control" class="endingNumber" id="endingNumber" type="number" placeholder="Enter any positive integer.">
+                    </input>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" id="label" for="stepNumber">Step:
+                    </label>
+                    <input class="col-sm-2 form-control" class="stepNumber" id="stepNumber" type="number" placeholder="Enter any positive integer.">
+                    </input>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2" id="buttonsSpace">
+                        </div>
+                    <div class="col-sm-2" id="buttons">
+                        <button class"btn btn-primary" id="button1" type="button" onclick="validateItemsEven()">Display Evens</button>
+                        <button class"btn" id="button2" type="button" style="display: inline-block;" onclick="validateItemsOdd()">Display Odds</button>  
+                    </div>
+                    <script type="text/JavaScript" src="sampleAuditionProblem.js">
+                        </script>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2" id="buttonsSpace">
+                        </div>
+                    <div class="col-sm-2" id="buttons">
+                        <button class"btn btn-primary" id="button3" type="button" onclick="reset()">Reset All</button>
+                    </div>
+                    <script type="text/JavaScript" src="sampleAuditionProblem.js">
+                    </script>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-12">
+            <br>
+            <div class="col-sm-12">
+                <span id="even" style="display: none;">Here are the even numbers between <span id="start"></span> and <span id="end"></span> by <span id="step"></span>:
+                </span>
+                <br>
+            </div>
+            <div class="coll-sm-12">
+                <span id="odd" style="display: none;">Here are the ODD numbers between <span class="startingNumber"></span> and <span class="endingNumber"></span> by <span class="stepNumber"></span>:
+                </span>
+            </div>
+            <br>
+            <div class="col-sm-12">
+                <span id="output1" style="display:none;"></span>
+            </div>
+            <div class="col-sm-12">
+                <span id="output2" style="display:none;"></span>
+            </div>
+            <br>
+        </div>
+    </body>
+    <footer>
+    </footer>
+</html>

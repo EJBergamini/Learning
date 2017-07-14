@@ -40,8 +40,7 @@ function validateItems() {
    }
    document.getElementById("results").style.display = "block";
    document.getElementById("submitButton").innerText = "Recalculate";
-   document.getElementById("addResult").innerText = Number(num1) +
-                                                     Number(num2);
+   document.getElementById("addResult").innerText = Number(num1) + Number(num2);
    document.getElementById("subtractResult").innerText = num1 - num2;
    document.getElementById("multiplyResult").innerText = num1 * num2;
    document.getElementById("divideResult").innerText = num1 / num2;
