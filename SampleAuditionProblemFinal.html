@@ -5,6 +5,10 @@
 <!--There is a problem with validating where once you validate if you are incorrect the JS validation will break the BS grid 
 system and highlight the offending form field, I don't know how to prevent that from happening exactly.-->
 
+<!--With a lot of help from the community and online resources this is now complete!!-->
+
+<!--Still can't quite get the odd number variables to show up in their own sentence.-->
+
     <head>
 
         <!-- Latest compiled and minified CSS -->
@@ -20,7 +24,7 @@ system and highlight the offending form field, I don't know how to prevent that 
         </script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
         </script>
-        <script type="text/JavaScript" src="sampleAuditionProblem.js">
+        <script type="text/JavaScript" src="sampleAuditionProblemFinal.js">
         </script>
         
         <title>Sample Audition Problem
@@ -33,10 +37,10 @@ system and highlight the offending form field, I don't know how to prevent that 
             #startingNumber {
                 width: 250px;
             }
-             #endingNumber {
+            #endingNumber {
                 width: 250px;
             }
-             #stepNumber {
+            #stepNumber {
                 width: 250px;
             }
             #label {
@@ -54,6 +58,15 @@ system and highlight the offending form field, I don't know how to prevent that 
             button {
                 width: 120px;
             }
+            pre {
+                background: white;
+                white-space: pre-wrap;
+                word-wrap: normal;
+                width: 250px;
+            }
+            .results {
+                width: 250px;
+            }
         </style>
     </head>
     <header>
@@ -63,7 +76,7 @@ system and highlight the offending form field, I don't know how to prevent that 
     <br>
     <br>
         <div class="container-fluid">
-            <form class="form" id="formContents" name="userForm">
+            <form class="col-sm-12 form" id="formContents" name="userForm">
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label" id="label" for="startingNumber">Starting Number:
                     </label>
@@ -86,45 +99,45 @@ system and highlight the offending form field, I don't know how to prevent that 
                     <div class="col-sm-2" id="buttonsSpace">
                         </div>
                     <div class="col-sm-2" id="buttons">
-                        <button class"btn btn-primary" id="button1" type="button" onclick="validateItems(); computeEvens();">Display Evens</button>
-                        <button class"btn" id="button2" type="button" style="display: inline-block;" onclick="validateItemsOdd()">Display Odds</button>  
+                        <button class"btn btn-primary" id="button1" type="button" onclick="validateItems(); evenNumbers()">Display Evens</button>
+                        <button class"btn" id="button2" type="button" style="display: inline-block;" onclick="validateItems(); oddNumbers()">Display Odds</button>  
                     </div>
-                    <script type="text/JavaScript" src="sampleAuditionProblem.js">
-                        </script>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-2" id="buttonsSpace">
                         </div>
                     <div class="col-sm-2" id="buttons">
-                        <button class"btn btn-primary" id="button3" type="button" onclick="reset()">Reset All</button>
+                        <button class"btn btn-primary" id="button3" type="button" onclick="empty()">Reset All</button>
                     </div>
-                    <script type="text/JavaScript" src="sampleAuditionProblem.js">
-                    </script>
                 </div>
             </form>
         </div>
-        <div class="col-sm-12">
-            <br>
-            <div class="col-sm-12">
-                <span id="even" style="display: none;" >Here are the even numbers between <span id="start"></span> and <span id="end"></span> by <span id="step"></span>:
-                </span>
-                <br>
-            </div>
-            <!--<div class="coll-sm-12">
-                <span id="odd" style="display: none;">Here are the ODD numbers between <span class="startingNumber"></span> and <span class="endingNumber"></span> by <span class="stepNumber"></span>:
-                </span>
-            </div>
-            <br>-->
-            <div class="col-sm-12">
-                <span id="result" style="display:none;"></span>
-                <br>
-                <!--<span id="output1"></span>-->
-            </div>
-            <div class="col-sm-12">
-                <span id="output2" style="display:none;"></span>
+        <br>
+        <br>
+        <div class="container-fluid">
+            <div class="col-sm-12" class="results">
+                <div class="col-sm-4">
+                    <span id="even" style="display: none;">Here are the even numbers between <span id="start"></span> and <span id="end"></span> by <span id="step"></span>:
+                    </span>
+                </div>
+                <div class="col-sm-4">
+                    <pre id="output" style="display: none;"><span id="output" style="display:none;"></span></pre>
+                </div>
             </div>
             <br>
+            <br>
+            <div class="col-sm-12" class="results">
+                <div class="col-sm-4">
+                    <span id="odd" style="display: none;">Here are the ODD numbers between <span class="startingNumber"></span> and <span class="endingNumber"></span> by <span class="stepNumber"></span>:
+                    </span>
+                </div>
+                <div class="col-sm-4">
+                    <pre id="output1" style="display: none;"><span id="output1" style="display:none;"></span></pre>
+                </div>
+            </div>
         </div>
+        <script type="text/JavaScript" src="sampleAuditionProblemFinal.js">
+        </script>
     </body>
     <footer>
     </footer>

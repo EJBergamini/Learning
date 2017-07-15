@@ -2,7 +2,7 @@ function reset() {
     document.getElementById("formContents").reset();
     document.getElementById("even").style.display = "none";
     document.getElementById("odd").style.display = "none";
-    document.getElementById("output1").style.display = "none";
+    document.getElementById("result").style.display = "none";
     document.getElementById("output2").style.display = "none";
     return;
 }
@@ -20,7 +20,7 @@ function clearErrors() {
     }    
 }
 
-function validateItemsEven() {
+function validateItems() {
     clearErrors();
     var num1 = document.forms["userForm"]["startingNumber"].value;
     var num2 = document.forms["userForm"]["endingNumber"].value;
@@ -51,21 +51,53 @@ function validateItemsEven() {
         alert("Ending Number must be greater than Starting Number.")
         return false;
     }
-    else function evenNumbers(num1, num2, num3){    
-        var output1 = [];    
-        for (var i = num1; i < num2; i += num3){    
-            if (i % 2 == 0){       
-                output1.push(i);
-            }
+}
+
+/*var nums = [1,2,34,54,55,34,32,11,19,17,54,66,13];
+var evens = [];
+var odds = [];
+
+var evenNumbers = function(nums) {
+    for (var i = 0; i < nums.length; i++) {
+
+        if ((nums[i] % 2) != 1) {
+            evens.push(nums[i]);
+                console.log(evens);
         }
-        document.getElementById("output1").innerText = output1.join();
+        else {
+            odds.push(nums[i]);
+                console.log(odds);
+        }
     }
+
+};
+evenNumbers(nums);
+alert(evens);
+alert(odds);*/
+
+function computeEvens() {
+    var num1 = document.forms["userForm"]["startingNumber"].value;
+    var num2 = document.forms["userForm"]["endingNumber"].value;
+    var num3 = document.forms["userForm"]["stepNumber"].value; 
+    for (var i = num1; i < num2; i += num3){ 
+
+        if ((result[i]) % 2 === 0){
+            evens.push([i])
+        }
+        
+    }
+    /*document.getElementById("result").innerHTML = output.join();
     document.getElementById("even").style.display = "block";
     document.getElementById("start").innerText = Number(num1);
     document.getElementById("end").innerText = Number(num2);
     document.getElementById("step").innerText = Number(num3);
-    document.getElementById("output1").style.display = "block";
+    document.getElementById("result").style.display = "block";*/
 }
+
+
+
+
+
 /*
 function validateItemsOdd() {
     clearErrors();
